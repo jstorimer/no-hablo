@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  shop_id: 1
+  to_lang: MyString
+
+two:
+  shop_id: 1
+  to_lang: MyString

@@ -25,3 +25,907 @@ Migrating to CreateShops (20100107182002)
 [0m
   [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
 [Shopify App] Shopify App plugin installed but no config/shopify.yml found.
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("shops")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE TABLE "shops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "site" varchar(255), "processing" boolean, "subdomain" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100107182002')[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateShops (20100107182002)
+Migrating to CreateDelayedJobs (20100107183507)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" varchar(255), "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100107183507')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("delayed_jobs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("shops")[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" varchar(255), "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "shops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "site" varchar(255), "processing" boolean, "subdomain" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100107183507')[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100107182002')[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateShops (20100107182002)
+Migrating to CreateDelayedJobs (20100107183507)
+Migrating to CreateTranslations (20100107185021)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "shop_id" integer, "to_lang" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100107185021')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("translations")[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("translations")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" varchar(255), "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "shops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "site" varchar(255), "processing" boolean, "subdomain" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "shop_id" integer, "to_lang" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100107185021')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100107182002')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100107183507')[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateShops (20100107182002)
+Migrating to CreateDelayedJobs (20100107183507)
+Migrating to CreateTranslations (20100107185021)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("translations")[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("translations")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" varchar(255), "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "shops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "site" varchar(255), "processing" boolean, "subdomain" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "shop_id" integer, "to_lang" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100107185021')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100107182002')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100107183507')[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateShops (20100107182002)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "shops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "site" varchar(255), "processing" boolean, "subdomain" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100107182002')[0m
+Migrating to CreateDelayedJobs (20100107183507)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" varchar(255), "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100107183507')[0m
+Migrating to CreateTranslations (20100107185021)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "shop_id" integer, "to_lang" varchar(255), "paid" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100107185021')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("translations")[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("translations")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" varchar(255), "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "shops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "site" varchar(255), "processing" boolean, "subdomain" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "shop_id" integer, "to_lang" varchar(255), "paid" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100107185021')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100107182002')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100107183507')[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-07 14:46:32) [GET]
+Redirected to http://localhost:3000/login
+Filter chain halted as [#<ActionController::Filters::AroundFilter:0x102fa9418 @identifier=nil, @kind=:filter, @options={}, @method=:shopify_session>] did_not_yield.
+Completed in 30ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-07 14:46:32) [GET]
+Rendering template within layouts/application
+Rendering login/index
+Completed in 88ms (View: 87, DB: 0) | 200 OK [http://localhost/login]
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-07 14:50:21) [GET]
+Rendering template within layouts/application
+Rendering login/index
+Completed in 27ms (View: 26, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-07 14:50:24) [GET]
+Redirected to http://localhost:3000/login
+Filter chain halted as [#<ActionController::Filters::AroundFilter:0x10378c4f0 @identifier=nil, @kind=:filter, @options={}, @method=:shopify_session>] did_not_yield.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-07 14:50:24) [GET]
+Rendering template within layouts/application
+Rendering login/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing LoginController#authenticate (for 127.0.0.1 at 2010-01-07 14:50:27) [POST]
+  Parameters: {"shop"=>"jessetesting", "commit"=>"Install", "authenticity_token"=>"IMtFoVxWyqUfFLw5MTED8MobDyurdqbMdaWxotLQZzY="}
+Redirected to http://jessetesting.myshopify.com/admin/api/auth?api_key=9ed77f6baede1c9266ff0055f7303005
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/login/authenticate]
+
+
+Processing LoginController#finalize (for 127.0.0.1 at 2010-01-07 14:50:36) [GET]
+  Parameters: {"shop"=>"jessetesting.myshopify.com", "timestamp"=>"1262893837", "signature"=>"584ffcb366206398c372aa4c5882f748", "t"=>"494626187205293f3cef37b683986126"}
+Redirected to http://localhost:3000/
+Completed in 83ms (DB: 0) | 302 Found [http://localhost/login/finalize?timestamp=1262893837&shop=jessetesting.myshopify.com&signature=584ffcb366206398c372aa4c5882f748&t=494626187205293f3cef37b683986126]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-07 14:50:36) [GET]
+  [4;36;1mShop Load (19.9ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+
+NoMethodError (undefined method `translations' for nil:NilClass):
+  app/controllers/translations_controller.rb:11:in `create'
+
+Rendered rescues/_trace (99.0ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:51:22) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 542ms (View: 87, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#design (for 127.0.0.1 at 2010-01-07 14:51:40) [GET]
+Rendering template within layouts/application
+Rendering home/design
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/home/design]
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:52:54) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 461ms (View: 87, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:55:36) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 378ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:55:50) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 273ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:56:07) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 336ms (View: 76, DB: 0) | 200 OK [http://localhost/]
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:56:50) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 409ms (View: 87, DB: 0) | 200 OK [http://localhost/]
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:57:57) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #14 of app/views/translations/new.html.erb:
+11:   <% semantic_form_for :translation do |f| %>
+12:     <%= f.input :to_lang, :as => :select %>
+13: 
+14:      <% form.buttons do %>
+15:       <%= form.commit_button %>
+16:     <% end %>
+17:   <% end %>
+
+    app/views/translations/new.html.erb:14:in `form'
+    app/views/translations/new.html.erb:14
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1515:in `semantic_form_for'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1474:in `with_custom_field_error_proc'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1514:in `semantic_form_for'
+    app/views/translations/new.html.erb:11
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:58:03) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #14 of app/views/translations/new.html.erb:
+11:   <% semantic_form_for :translation do |f| %>
+12:     <%= f.input :to_lang, :as => :select %>
+13: 
+14:      <% form.button do %>
+15:       <%= form.commit_button %>
+16:     <% end %>
+17:   <% end %>
+
+    app/views/translations/new.html.erb:14:in `form'
+    app/views/translations/new.html.erb:14
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1515:in `semantic_form_for'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1474:in `with_custom_field_error_proc'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1514:in `semantic_form_for'
+    app/views/translations/new.html.erb:11
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:58:15) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #14 of app/views/translations/new.html.erb:
+11:   <% semantic_form_for :translation do |f| %>
+12:     <%= f.input :to_lang, :as => :select %>
+13: 
+14:      <% form.buttons do %>
+15:       <%= form.commit_button 'Translate' %>
+16:     <% end %>
+17:   <% end %>
+
+    app/views/translations/new.html.erb:14:in `form'
+    app/views/translations/new.html.erb:14
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1515:in `semantic_form_for'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1474:in `with_custom_field_error_proc'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1514:in `semantic_form_for'
+    app/views/translations/new.html.erb:11
+
+Rendered rescues/_trace (120.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:58:17) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #14 of app/views/translations/new.html.erb:
+11:   <% semantic_form_for :translation do |f| %>
+12:     <%= f.input :to_lang, :as => :select %>
+13: 
+14:      <% form.buttons do %>
+15:       <%= form.commit_button 'Translate' %>
+16:     <% end %>
+17:   <% end %>
+
+    app/views/translations/new.html.erb:14:in `form'
+    app/views/translations/new.html.erb:14
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1515:in `semantic_form_for'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1474:in `with_custom_field_error_proc'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1514:in `semantic_form_for'
+    app/views/translations/new.html.erb:11
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:58:17) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #14 of app/views/translations/new.html.erb:
+11:   <% semantic_form_for :translation do |f| %>
+12:     <%= f.input :to_lang, :as => :select %>
+13: 
+14:      <% form.buttons do %>
+15:       <%= form.commit_button 'Translate' %>
+16:     <% end %>
+17:   <% end %>
+
+    app/views/translations/new.html.erb:14:in `form'
+    app/views/translations/new.html.erb:14
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1515:in `semantic_form_for'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1474:in `with_custom_field_error_proc'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1514:in `semantic_form_for'
+    app/views/translations/new.html.erb:11
+
+Rendered rescues/_trace (41.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:58:28) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 353ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#design (for 127.0.0.1 at 2010-01-07 14:59:05) [GET]
+Rendering template within layouts/application
+Rendering home/design
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/home/design]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 14:59:20) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 377ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:01:31) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (uninitialized constant Shop::LANGUAGES) on line #13 of app/views/translations/new.html.erb:
+10:   </p>
+11: 
+12:   <% semantic_form_for :translation do |f| %>
+13:     <%= f.input :to_lang, :as => :select, :collection => Shop::LANGUAGES %>
+14: 
+15:      <% f.buttons do %>
+16:       <%= f.commit_button 'Translate' %>
+
+    app/views/translations/new.html.erb:13
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1515:in `semantic_form_for'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1474:in `with_custom_field_error_proc'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1514:in `semantic_form_for'
+    app/views/translations/new.html.erb:12
+
+Rendered rescues/_trace (117.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:07:52) [GET]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NameError (undefined local variable or method `zh' for #<Class:0x1032078b8>):
+  app/models/shop.rb:3
+  app/controllers/translations_controller.rb:6:in `new'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:08:55) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 454ms (View: 94, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:08:56) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 272ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:10:12) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 467ms (View: 88, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:10:23) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 320ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:17:47) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 462ms (View: 92, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:18:36) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 362ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:24:19) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 563ms (View: 89, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:24:57) [GET]
+
+ThreadError (killed thread):
+  app/controllers/translations_controller.rb:6:in `new'
+  app/controllers/translations_controller.rb:6:in `new'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:26:37) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 380ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#design (for 127.0.0.1 at 2010-01-07 15:26:55) [GET]
+Rendering template within layouts/application
+Rendering home/design
+Completed in 14ms (View: 11, DB: 0) | 200 OK [http://localhost/home/design]
+
+
+Processing HomeController#design (for 127.0.0.1 at 2010-01-07 15:27:14) [GET]
+Rendering template within layouts/application
+Rendering home/design
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/home/design]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:27:21) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 383ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:27:29) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 409ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:30:41) [GET]
+Redirected to http://localhost:3000/login
+Filter chain halted as [#<ActionController::Filters::AroundFilter:0x10344a850 @identifier=nil, @kind=:filter, @options={}, @method=:shopify_session>] did_not_yield.
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-07 15:30:41) [GET]
+Rendering template within layouts/application
+Rendering login/index
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing LoginController#authenticate (for 127.0.0.1 at 2010-01-07 15:30:47) [POST]
+  Parameters: {"shop"=>"jessetesting", "commit"=>"Install", "authenticity_token"=>"bdJ7vU7lYIIa3oS9PbFrpPxk4u030DdSaqRN810Njn8="}
+Redirected to http://jessetesting.myshopify.com/admin/api/auth?api_key=9ed77f6baede1c9266ff0055f7303005
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/login/authenticate]
+
+
+Processing LoginController#finalize (for 127.0.0.1 at 2010-01-07 15:30:51) [GET]
+  Parameters: {"shop"=>"jessetesting.myshopify.com", "timestamp"=>"1262896251", "signature"=>"f4f2ed82c914a15942bee43257c69916", "t"=>"494626187205293f3cef37b683986126"}
+Redirected to http://localhost:3000/
+Completed in 78ms (DB: 0) | 302 Found [http://localhost/login/finalize?timestamp=1262896251&shop=jessetesting.myshopify.com&signature=f4f2ed82c914a15942bee43257c69916&t=494626187205293f3cef37b683986126]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:30:51) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 377ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:32:04) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 402ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:32:12) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"IMtFoVxWyqUfFLw5MTED8MobDyurdqbMdaWxotLQZzY=", "translation"=>{"to_lang"=>"cs"}}
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 390ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:33:05) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (undefined method `translations_path' for #<ActionView::Base:0x102d62628>) on line #12 of app/views/translations/new.html.erb:
+9:     What language would you like to translate your descriptions to?
+10:   </p>
+11: 
+12:   <% semantic_form_for @translation do |f| %>
+13:     <% f.inputs do %>
+14:       <%= f.input :to_lang, :as => :select, :collection => Shop::LANGUAGES %>
+15:     <% end %>
+
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1515:in `semantic_form_for'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1474:in `with_custom_field_error_proc'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1514:in `semantic_form_for'
+    app/views/translations/new.html.erb:12
+
+Rendered rescues/_trace (55.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:33:27) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 495ms (View: 84, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-07 15:33:28) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 337ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-07 15:33:34) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"IMtFoVxWyqUfFLw5MTED8MobDyurdqbMdaWxotLQZzY=", "translation"=>{"to_lang"=>"cs"}}
+  [4;36;1mShop Load (0.1ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+
+NoMethodError (undefined method `translations' for nil:NilClass):
+  app/controllers/translations_controller.rb:12:in `create'
+
+Rendered rescues/_trace (41.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-08 07:39:54) [GET]
+
+NoMethodError (undefined method `processing?' for nil:NilClass):
+  app/controllers/translations_controller.rb:29:in `check_on_processing'
+
+Rendered rescues/_trace (49.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:12:21) [GET]
+
+NoMethodError (undefined method `processing?' for nil:NilClass):
+  app/controllers/translations_controller.rb:29:in `check_on_processing'
+
+Rendered rescues/_trace (95.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:13:05) [GET]
+Redirected to http://localhost:3000/login
+Filter chain halted as [#<ActionController::Filters::AroundFilter:0x103287bf8 @identifier=nil, @kind=:filter, @options={}, @method=:shopify_session>] did_not_yield.
+Completed in 18ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-09 07:13:05) [GET]
+Rendering template within layouts/application
+Rendering login/index
+Completed in 188ms (View: 187, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing LoginController#authenticate (for 127.0.0.1 at 2010-01-09 07:13:13) [POST]
+  Parameters: {"shop"=>"jessetesting", "commit"=>"Install", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM="}
+Redirected to http://jessetesting.myshopify.com/admin/api/auth?api_key=9ed77f6baede1c9266ff0055f7303005
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/login/authenticate]
+
+
+Processing LoginController#finalize (for 127.0.0.1 at 2010-01-09 07:13:14) [GET]
+  Parameters: {"shop"=>"jessetesting.myshopify.com", "timestamp"=>"1263039193", "signature"=>"ce3b7139e2c82cc7cca319d479c84fcd", "t"=>"494626187205293f3cef37b683986126"}
+  [4;36;1mShop Load (28.4ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT "shops".id FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mShop Create (22.6ms)[0m   [0;1mINSERT INTO "shops" ("created_at", "updated_at", "subdomain", "site", "processing") VALUES('2010-01-09 12:13:21', '2010-01-09 12:13:21', 'jessetesting', 'https://9ed77f6baede1c9266ff0055f7303005:cecd2b54d27e8e0d60bb62ab9145e238@jessetesting.myshopify.com/admin', NULL)[0m
+Redirected to http://localhost:3000/
+Completed in 7410ms (DB: 51) | 302 Found [http://localhost/login/finalize?timestamp=1263039193&shop=jessetesting.myshopify.com&signature=ce3b7139e2c82cc7cca319d479c84fcd&t=494626187205293f3cef37b683986126]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:13:21) [GET]
+
+NoMethodError (undefined method `processing?' for nil:NilClass):
+  app/controllers/translations_controller.rb:29:in `check_on_processing'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:13:57) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 1110ms (View: 100, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:14:25) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 1228ms (View: 178, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:16:38) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 1828ms (View: 122, DB: 0) | 200 OK [http://localhost/]
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:18:05) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 1667ms (View: 166, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:18:23) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (wrong number of arguments (3 for 2)) on line #11 of app/views/translations/new.html.erb:
+8: 
+9:   <% semantic_form_for @translation do |f| %>
+10:     <% f.inputs do %>
+11:       <%= f.input :to_lang, 'Language', :as => :select, :collection => Translation::LANGUAGES %>
+12:     <% end %>
+13: 
+14:      <% f.buttons do %>
+
+    app/views/translations/new.html.erb:11:in `input'
+    app/views/translations/new.html.erb:11
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1138:in `field_set_and_list_wrapping'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:260:in `inputs'
+    app/views/translations/new.html.erb:10
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1515:in `semantic_form_for'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1474:in `with_custom_field_error_proc'
+    formtastic (0.9.4) rails/./lib/formtastic.rb:1514:in `semantic_form_for'
+    app/views/translations/new.html.erb:9
+
+Rendered rescues/_trace (118.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:18:50) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 1293ms (View: 304, DB: 0) | 200 OK [http://localhost/]
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml

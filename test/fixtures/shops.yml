@@ -1,11 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  site: MyString
+customer:
+  site: http://abc:abc@customer.myshopify.com/admin
   processing: false
-  subdomain: MyString
-
-two:
-  site: MyString
-  processing: false
-  subdomain: MyString
+  subdomain: customer

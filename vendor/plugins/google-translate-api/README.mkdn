@@ -1,0 +1,52 @@
+# Google Translator API
+
+## About
+This is an example of an API for [Google Translate](http://translate.google.com), created by me (dookie) for personal use.
+The aim of this implementation is create a simple command-line to quickly translate anything. It's very helpful for us, programmers, when reading some articles, books, or posts in different languages and we need to translate some word or expression.
+
+## How I use it
+I created a alias for my script, like that, in my .bash_profile (I'm using a Mac OS X):
+
+	alias t='ruby /Users/dookie/Projects/Experiencies/Ruby/translate/bin/translate.rb'
+
+And, to execute the translation:
+
+	t [word or expression] [translate language]
+
+	t 'Olá Mundo!' en
+	
+Then, the result will be:
+
+	Hello world!
+
+## Installing
+First of all, get the source code:
+	
+	git clone git://github.com/dookie/google-translate-api.git
+
+
+Then run:
+	
+	ruby bin/install.rb
+
+
+And enjoy:
+
+	t 'Olá mundo!' de
+
+## Troubleshoot
+
+### Checking the GEMS
+
+* whatlanguage
+* json
+* htmlentities
+
+#### Installing
+	sudo gem install whatlanguage json htmlentities
+	
+## TO-DO	
+* Make this lib a Ruby on Rails plugin
+
+## Contributing
+You can contribute to this approach, just keep the Licence.

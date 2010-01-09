@@ -17,6 +17,9 @@ class LoginController < ApplicationController
     if shopify_session.valid?
       session[:shopify] = shopify_session
       flash[:notice] = "Logged in to shopify store."
+
+      Shop.find_or_create_by_subdomain(:subdomain => session[:shopify].subdomain,
+                                       :site => session[:shopify].site)
       
       return_address = session[:return_to] || '/home'
       session[:return_to] = nil

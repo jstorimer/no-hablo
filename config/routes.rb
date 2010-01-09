@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => 'home'
+  map.root :controller => 'translations', :action => 'new'
+  map.resources :translations
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

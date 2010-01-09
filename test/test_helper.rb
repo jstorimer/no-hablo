@@ -35,4 +35,10 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login_to_shopify
+    shop = 'customer.myshopify.com'
+    token = '1234'
+
+    session[:shopify] = ShopifyAPI::Session.new(shop, token)
+  end
 end

@@ -26,8 +26,7 @@ h2. How to get it started
 git clone git://github.com/jstorimer/no-hablo.git
 cd no-hablo
 sudo rake gems:install
-rake db:migrate
-</pre></code>
+rake db:migrate</pre></code>
 Go to your "Shopify Partners account":https://app.shopify.com/services/partners/api_clients/ and create a new application.
 Stick the new Api Key and Secret into config/shopify.yml
 @./script/server@

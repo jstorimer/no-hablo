@@ -14,7 +14,7 @@ class Translation < ActiveRecord::Base
       metafield.load({
          :description => "Translation of description to #{to_lang}",
          :namespace => 'translations',
-         :key => to_lang,
+         :key => "lang-#{to_lang}",
          :value => translator.translate(product.body),
          :value_type => 'string'
       })
@@ -23,6 +23,6 @@ class Translation < ActiveRecord::Base
     end
     
     shop.update_attributes(:processing => false)
-    TranslationMailer.deliver_notification(ShopifyAPI::Shop.current.email)
+    TranslationMailer.deliver_notification(ShopifyAPI::Shop.current.email, self)
   end
 end

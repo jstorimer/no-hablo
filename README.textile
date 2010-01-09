@@ -8,24 +8,26 @@ h2. Points of interest
 
 As this app is meant as a learning tool for Shopify developers, here are a few points of interest:
 
-# login_controller.rb:23
+# "login_controller.rb:23":http://github.com/jstorimer/no-hablo/blob/master/app/controllers/login_controller.rb#L23
 Here we create a Shop object local to this application when the user logs in for the first time.
 
-# shop.rb:11
+# "shop.rb:11":http://github.com/jstorimer/no-hablo/blob/master/app/models/shop.rb#L11
 Read the comment for the gist.
 
-# translation_controller:42 and payment_notification_controller
+# "translation_controller:42":http://github.com/jstorimer/no-hablo/blob/master/app/controllers/translations_controller.rb#L42 and "payment_notification_controller":http://github.com/jstorimer/no-hablo/blob/master/app/controllers/translations_controller.rb
 These two pieces together show how to handle the creation of a charge, subsequent redirection to the confirmation and updating of local data.
 
-# translation.rb:8
+# "translation.rb:8":http://github.com/jstorimer/no-hablo/blob/master/app/models/translation.rb#L8
 This method is called by DJ in a background task. It illustrates how to initialize and de-initialize the API with the shop's site string in a background task.
 
 h2. How to get it started
 
-@git clone git://github.com/jstorimer/no-hablo.git@
-@cd no-hablo@
-@sudo rake gems:install@
-@rake db:migrate@
+<pre><code>
+git clone git://github.com/jstorimer/no-hablo.git
+cd no-hablo
+sudo rake gems:install
+rake db:migrate
+</pre></code>
 Go to your "Shopify Partners account":https://app.shopify.com/services/partners/api_clients/ and create a new application.
 Stick the new Api Key and Secret into config/shopify.yml
 @./script/server@

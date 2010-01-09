@@ -1,3 +1,2 @@
-config/shopify.yml
 *.log
 *.sqlite3

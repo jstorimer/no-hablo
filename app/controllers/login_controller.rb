@@ -18,6 +18,8 @@ class LoginController < ApplicationController
       session[:shopify] = shopify_session
       flash[:notice] = "Logged in to shopify store."
 
+      # This creates the local shop object and stores its authentication string so that it can
+      # used later in background tasks, etc.
       Shop.find_or_create_by_subdomain(:subdomain => session[:shopify].subdomain,
                                        :site => session[:shopify].site)
       

@@ -1,6 +1,8 @@
 class TranslationsController < ApplicationController
   around_filter :shopify_session
-
+  before_filter :load_shop
+  before_filter :check_on_processing, :only => :create
+  
   def new
     @product_count = ShopifyAPI::Product.count
     @cost_in_cents = (@product_count * Translation::UNIT_PRICE) * 100
@@ -8,12 +10,13 @@ class TranslationsController < ApplicationController
   end
 
   def create 
-    @shop = Shop.find_by_subdomain(session[:shopify].subdomain)
     @translation = @shop.translations.find_or_initialize_by_shop_id_and_to_lang(params[:translation].merge(:shop_id => @shop.id))
-    check_on_processing
 
     if @translation.save
-      charge_user
+      if redirect = requires_payment?
+        redirect_to redirect and return
+      end
+      
       @shop.update_attributes(:processing => true)
       @translation.send_later(:translate)
       flash[:notice] = 'We have queued up your translation job in a background task and will send you an email once the job is finished!'
@@ -26,19 +29,25 @@ class TranslationsController < ApplicationController
 
   private
   def check_on_processing
-    flash[:error] = 'You have a translation in progress. You must wait for that to finish before beginning a new one.' if @shop.processing?
-    redirect_to :action => 'new' and return
+    if @shop.processing?
+      flash[:error] = 'You have a translation in progress. You must wait for that to finish before beginning a new one.' 
+      redirect_to :action => 'new'
+    end
   end
   
-  def charge_user
-    return true if @translation.paid?
+  def load_shop
+    @shop = Shop.find_by_subdomain(session[:shopify].subdomain)
+  end
+  
+  def requires_payment?
+    return false if @translation.paid?
 
-    session[:return_to] = request.url
-    charge = ShopifyAPI::ApplicationCharge.create(:name => "Translation charge from NoHablo for translation of product descriptions to #{params[:to_lang]}", 
+    session[:return_to] = url_for("http://#{request.host}:#{request.port}/translations/create?translation[to_lang]=#{params[:translation][:to_lang]}")
+    charge = ShopifyAPI::ApplicationCharge.create(:name => "Translation charge from NoHablo for translation of product descriptions to #{params[:translation][:to_lang]}", 
                                          :price => ShopifyAPI::Product.count * Translation::UNIT_PRICE,
                                          :test => !Rails.env.production?,
-                                         :return_url => url_for(:controller => 'payment_notification', :action => 'create'))
+                                         :return_url => url_for(:controller => 'payment_notification', :action => 'create', :translation_id => @translation.id))
 
-    redirect_to charge.confirmation_url
+    charge.confirmation_url
   end
 end

@@ -1,25 +1,33 @@
 <p class='note'>
   No Hablo is an application for your Shopify store that will translate each of your product descriptions to a new language. No Hablo uses <%= link_to 'metafields', 'http://blog.shopify.com/2009/12/14/new-feature-metafields' %> to store the translations which can be accessed from Liquid.
 </p>
+<% if @shop.processing? %>
 <div class='light'>
   <p>
-    What language would you like to translate your descriptions to?
+    Whoa there! You already have one translation in progress. You should receive an email when that one is finished and then you can come back for more internationalization action.
   </p>
+</div>  
+<% else %>
+  <div class='light'>
+    <p>
+      What language would you like to translate your descriptions to?
+    </p>
 
-  <% semantic_form_for @translation do |f| %>
-    <% f.inputs do %>
-      <%= f.input :to_lang, :as => :select, :collection => Translation::LANGUAGES, :label => 'Language' %>
+    <% semantic_form_for @translation do |f| %>
+      <% f.inputs do %>
+        <%= f.input :to_lang, :as => :select, :collection => Translation::LANGUAGES, :label => 'Language' %>
+      <% end %>
+
+       <% f.buttons do %>
+        <%= f.commit_button 'Translate' %>
+      <% end %>
     <% end %>
+  </div>
 
-     <% f.buttons do %>
-      <%= f.commit_button 'Translate' %>
-    <% end %>
-  <% end %>
-</div>
-
-<div class='box wrapper'>
-  <dl>
-    <dt>Cost:</dt>
-    <dd><h3><%= Money.new(@cost_in_cents).format %> (<%= @product_count %> products x <%= Money.new(Translation::UNIT_PRICE * 100).format %> per product)</h3></dd>
-  </dl>
-</div>
+  <div class='box wrapper'>
+    <dl>
+      <dt>Cost:</dt>
+      <dd><h3><%= Money.new(@cost_in_cents).format %> (<%= @product_count %> products x <%= Money.new(Translation::UNIT_PRICE * 100).format %> per product)</h3></dd>
+    </dl>
+  </div>
+<% end %>

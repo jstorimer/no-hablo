@@ -929,3 +929,621 @@ Completed in 1293ms (View: 304, DB: 0) | 200 OK [http://localhost/]
 [Shopify App] Loading API credentials from config/shopify.yml
 [Shopify App] Loading API credentials from config/shopify.yml
 [Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:32:43) [GET]
+Rendering template within layouts/application
+Rendering translations/new
+
+ActionView::TemplateError (undefined method `processing?' for nil:NilClass) on line #4 of app/views/translations/new.html.erb:
+1: <p class='note'>
+2:   No Hablo is an application for your Shopify store that will translate each of your product descriptions to a new language. No Hablo uses <%= link_to 'metafields', 'http://blog.shopify.com/2009/12/14/new-feature-metafields' %> to store the translations which can be accessed from Liquid.
+3: </p>
+4: <% if @shop.processing? %>
+5: <div class='light'>
+6:   <p>
+7:     Whoa there! You already have one translation in progress. You should receive an email when that one is finished and then you can come back for more internationalization action.
+
+    app/views/translations/new.html.erb:4
+
+Rendered rescues/_trace (43.1ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:33:21) [GET]
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 484ms (View: 80, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:33:34) [GET]
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 325ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:33:40) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;35;1mTranslation Load (0.2ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+  [4;36;1mTranslation Create (0.4ms)[0m   [0;1mINSERT INTO "translations" ("created_at", "paid", "updated_at", "shop_id", "to_lang") VALUES('2010-01-09 12:33:40', NULL, '2010-01-09 12:33:40', 1, 'cs')[0m
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/translations_controller.rb:46:in `charge_user'
+  app/controllers/translations_controller.rb:16:in `create'
+
+Rendered rescues/_trace (97.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:34:00) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.5ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/translations_controller.rb:46:in `charge_user'
+  app/controllers/translations_controller.rb:16:in `create'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:34:29) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.3ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/translations_controller.rb:46:in `charge_user'
+  app/controllers/translations_controller.rb:16:in `create'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:35:46) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.4ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/translations_controller.rb:46:in `charge_user'
+  app/controllers/translations_controller.rb:16:in `create'
+
+Rendered rescues/_trace (103.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:36:16) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (1.0ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/translations_controller.rb:46:in `charge_user'
+  app/controllers/translations_controller.rb:16:in `create'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:36:50) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.3ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/translations_controller.rb:46:in `user_paid?'
+  app/controllers/translations_controller.rb:16:in `create'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:38:08) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.3ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://jessetesting.myshopify.com/admin/subscriptions/confirm_application_charge/292?signature=BAhpAiQB--01c3f047138454aa03c7d7bb422e885dee6d962c
+Completed in 1253ms (DB: 1) | 302 Found [http://localhost/translations]
+
+
+Processing PaymentNotificationController#create (for 127.0.0.1 at 2010-01-09 07:38:45) [GET]
+  Parameters: {"signature"=>"faee0f82fd66f2fbaa127aa6a42fd21f", "accepted"=>"true", "charge_id"=>"292"}
+Redirected to http://localhost:3000/translations
+Completed in 1165ms (DB: 0) | 302 Found [http://localhost/payment_notification/create?accepted=true&charge_id=292&signature=faee0f82fd66f2fbaa127aa6a42fd21f]
+
+
+Processing TranslationsController#index (for 127.0.0.1 at 2010-01-09 07:38:47) [GET]
+  [4;35;1mShop Load (0.3ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to index. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-01-09 07:40:07) [GET]
+
+SyntaxError (/Users/jesse/workspace/rails/no-hablo/app/controllers/translations_controller.rb:46: syntax error, unexpected '\n', expecting tASSOC):
+  
+
+Rendered rescues/_trace (26.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:40:13) [GET]
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 477ms (View: 11, DB: 0) | 200 OK [http://localhost/translations/new]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:40:20) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"ar"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.2ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'ar') AND ("translations".shop_id = 1) LIMIT 1[0m
+  [4;35;1mTranslation Create (0.4ms)[0m   [0mINSERT INTO "translations" ("created_at", "paid", "updated_at", "shop_id", "to_lang") VALUES('2010-01-09 12:40:20', NULL, '2010-01-09 12:40:20', 1, 'ar')[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:47:30) [GET]
+  [4;36;1mShop Load (0.3ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 573ms (View: 65, DB: 0) | 200 OK [http://localhost/translations/new]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:47:42) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"ar"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.3ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'ar') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://jessetesting.myshopify.com/admin/subscriptions/confirm_application_charge/302?signature=BAhpAi4B--cd45a8b70bf3581a808e4f5dc02afedc6ed71215
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT "shops".id FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting' AND "shops".id <> 1) LIMIT 1[0m
+  [4;36;1mShop Update (0.3ms)[0m   [0;1mUPDATE "shops" SET "updated_at" = '2010-01-09 12:47:43', "processing" = 't' WHERE "id" = 1[0m
+  [4;35;1mDelayed::Job Create (0.4ms)[0m   [0mINSERT INTO "delayed_jobs" ("failed_at", "locked_by", "created_at", "handler", "updated_at", "priority", "run_at", "attempts", "locked_at", "description", "last_error") VALUES(NULL, NULL, '2010-01-09 12:47:43', '--- !ruby/struct:Delayed::PerformableMethod 
+object: AR:Translation:2
+method: :translate
+args: []
+
+', '2010-01-09 12:47:43', 0, '2010-01-09 12:47:43', 0, NULL, NULL, NULL)[0m
+
+ActionController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/translations_controller.rb:24:in `create'
+
+Rendered rescues/_trace (33.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-01-09 07:51:18) [GET]
+
+SyntaxError (/Users/jesse/workspace/rails/no-hablo/app/controllers/translations_controller.rb:10: syntax error, unexpected tASSOC, expecting kEND
+         :redirect_to => :action => 'new'
+                                   ^):
+  
+
+Rendered rescues/_trace (28.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:51:27) [GET]
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 430ms (View: 3, DB: 0) | 200 OK [http://localhost/translations/new]
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "delayed_jobs" [0m
+  [4;35;1mDelayed::Job Load (0.4ms)[0m   [0mSELECT * FROM "delayed_jobs" ORDER BY delayed_jobs.id DESC LIMIT 1[0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mDelayed::Job Delete all (3.2ms)[0m   [0;1mDELETE FROM "delayed_jobs" WHERE 1=1[0m
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:52:03) [GET]
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 357ms (View: 3, DB: 0) | 200 OK [http://localhost/translations/new]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:52:05) [GET]
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 339ms (View: 3, DB: 0) | 200 OK [http://localhost/translations/new]
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mShop Load (0.5ms)[0m   [0;1mSELECT * FROM "shops" LIMIT 1[0m
+  [4;35;1mShop Update (0.7ms)[0m   [0mUPDATE "shops" SET "updated_at" = '2010-01-09 12:52:19', "processing" = 'f' WHERE "id" = 1[0m
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:52:20) [GET]
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 337ms (View: 9, DB: 0) | 200 OK [http://localhost/translations/new]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:52:27) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+
+NoMethodError (undefined method `paid?' for nil:NilClass):
+  app/controllers/translations_controller.rb:46:in `user_paid?'
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:53:39) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"cs"}}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.3ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://jessetesting.myshopify.com/admin/subscriptions/confirm_application_charge/312?signature=BAhpAjgB--2974b8cc8caef86d5f5ed4e2604df01d7df4907d
+Completed in 1189ms (DB: 0) | 302 Found [http://localhost/translations]
+
+
+Processing PaymentNotificationController#create (for 127.0.0.1 at 2010-01-09 07:53:46) [GET]
+  Parameters: {"signature"=>"76d613d9de34fe1268a9b2656b9f3982", "accepted"=>"true", "charge_id"=>"312"}
+Redirected to http://localhost:3000/translations/create?to_lang=translation%5Bto_lang%5D=cs
+Completed in 1210ms (DB: 0) | 302 Found [http://localhost/payment_notification/create?accepted=true&charge_id=312&signature=76d613d9de34fe1268a9b2656b9f3982]
+
+
+Processing TranslationsController#show (for 127.0.0.1 at 2010-01-09 07:53:48) [GET]
+  Parameters: {"id"=>"create", "to_lang"=>"translation[to_lang]=cs"}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+
+ActionController::UnknownAction (No action responded to show. Actions: create and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:54:10) [GET]
+  Parameters: {"to_lang"=>"translation[to_lang]=cs"}
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+
+NoMethodError (undefined method `merge' for nil:NilClass):
+  app/controllers/translations_controller.rb:13:in `create'
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:54:35) [GET]
+  Parameters: {"to_lang"=>"translation[to_lang]=cs"}
+  [4;35;1mShop Load (0.2ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+
+NoMethodError (undefined method `merge' for nil:NilClass):
+  app/controllers/translations_controller.rb:15:in `create'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:55:10) [GET]
+  Parameters: {"translation"=>{"to_lang"=>"cs"}}
+  [4;36;1mShop Load (0.3ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;35;1mTranslation Load (0.5ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'cs') AND ("translations".shop_id = 1) LIMIT 1[0m
+Redirected to http://jessetesting.myshopify.com/admin/subscriptions/confirm_application_charge/322?signature=BAhpAkIB--f2c9194bd72906140eae495e50a907673815e907
+Completed in 4795ms (DB: 1) | 302 Found [http://localhost/translations/create?translation[to_lang]=cs]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:56:33) [GET]
+  [4;36;1mShop Load (0.4ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 431ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:56:39) [POST]
+  Parameters: {"commit"=>"Translate", "authenticity_token"=>"52N8HETwmuTeYlDQgCj9QYrJ/AmZQyBGOXX/zPixNMM=", "translation"=>{"to_lang"=>"da"}}
+  [4;35;1mShop Load (0.3ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;36;1mTranslation Load (0.2ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'da') AND ("translations".shop_id = 1) LIMIT 1[0m
+  [4;35;1mTranslation Create (0.4ms)[0m   [0mINSERT INTO "translations" ("created_at", "paid", "updated_at", "shop_id", "to_lang") VALUES('2010-01-09 12:56:39', NULL, '2010-01-09 12:56:39', 1, 'da')[0m
+Redirected to http://jessetesting.myshopify.com/admin/subscriptions/confirm_application_charge/332?signature=BAhpAkwB--ffdfb9f79ca7ce9802d156931fc30dcc062cc0be
+Completed in 1162ms (DB: 1) | 302 Found [http://localhost/translations]
+
+
+Processing PaymentNotificationController#create (for 127.0.0.1 at 2010-01-09 07:56:43) [GET]
+  Parameters: {"translation_id"=>"3", "signature"=>"7519f40f534960333a276400669a1ae1", "accepted"=>"true", "charge_id"=>"332"}
+  [4;36;1mTranslation Load (0.3ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;35;1mTranslation Update (0.4ms)[0m   [0mUPDATE "translations" SET "updated_at" = '2010-01-09 12:56:44', "paid" = 't' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/translations/create?translation[to_lang]=da
+Completed in 1112ms (DB: 1) | 302 Found [http://localhost/payment_notification/create?accepted=true&charge_id=332&signature=7519f40f534960333a276400669a1ae1&translation_id=3]
+
+
+Processing TranslationsController#create (for 127.0.0.1 at 2010-01-09 07:56:44) [GET]
+  Parameters: {"translation"=>{"to_lang"=>"da"}}
+  [4;36;1mShop Load (0.3ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+  [4;35;1mTranslation Load (0.4ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."shop_id" = 1 AND "translations"."to_lang" = 'da') AND ("translations".shop_id = 1) LIMIT 1[0m
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT "shops".id FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting' AND "shops".id <> 1) LIMIT 1[0m
+  [4;35;1mShop Update (0.3ms)[0m   [0mUPDATE "shops" SET "updated_at" = '2010-01-09 12:56:44', "processing" = 't' WHERE "id" = 1[0m
+  [4;36;1mDelayed::Job Create (0.4ms)[0m   [0;1mINSERT INTO "delayed_jobs" ("failed_at", "locked_by", "created_at", "handler", "updated_at", "priority", "run_at", "attempts", "locked_at", "description", "last_error") VALUES(NULL, NULL, '2010-01-09 12:56:44', '--- !ruby/struct:Delayed::PerformableMethod 
+object: AR:Translation:3
+method: :translate
+args: []
+
+', '2010-01-09 12:56:44', 0, '2010-01-09 12:56:44', 0, NULL, NULL, NULL)[0m
+Redirected to http://localhost:3000/
+Completed in 28ms (DB: 1) | 302 Found [http://localhost/translations/create?translation[to_lang]=da]
+
+
+Processing TranslationsController#new (for 127.0.0.1 at 2010-01-09 07:56:44) [GET]
+  [4;35;1mShop Load (0.3ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."subdomain" = 'jessetesting') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering translations/new
+Completed in 369ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+[Shopify App] Loading API credentials from config/shopify.yml
+*** Starting job worker host:Jessebook-2.local pid:81343
+* [JOB] aquiring lock on Translation#translate
+  [4;36;1mDelayed::Job Update (2.1ms)[0m   [0;1mUPDATE "delayed_jobs" SET locked_at = '2010-01-09 12:56:58', locked_by = 'host:Jessebook-2.local pid:81343' WHERE (id = 2 and (locked_at is null or locked_at < '2010-01-09 08:56:58')) [0m
+  [4;35;1mTranslation Load (0.3ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."id" = 1) [0m
+  [4;35;1mDelayed::Job Update (0.5ms)[0m   [0mUPDATE "delayed_jobs" SET "updated_at" = '2010-01-09 12:56:59', "last_error" = 'undefined method `description'' for #<ShopifyAPI::Product:0x102ac1c48>
+/Library/Ruby/Gems/1.8/gems/activeresource-2.3.5/lib/active_resource/base.rb:1153:in `method_missing''
+/Users/jesse/workspace/rails/no-hablo/app/models/translation.rb:10:in `translate''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/performable_method.rb:23:in `send''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/performable_method.rb:23:in `perform''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:220:in `invoke_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:92:in `run_with_lock''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:91:in `run_with_lock''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:158:in `reserve_and_run_one_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:157:in `each''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:157:in `reserve_and_run_one_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:204:in `work_off''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:203:in `times''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:203:in `work_off''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:28:in `start''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:27:in `start''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:24:in `loop''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:24:in `start''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/tasks/tasks.rb:13
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `call''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `execute''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `each''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `execute''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:597:in `invoke_with_call_chain''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:590:in `invoke_with_call_chain''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:583:in `invoke''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2051:in `invoke_task''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `each''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2023:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2001:in `run''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:1998:in `run''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/bin/rake:31
+/usr/bin/rake:19:in `load''
+/usr/bin/rake:19', "attempts" = 1, "run_at" = '2010-01-09 12:57:04' WHERE "id" = 2[0m
+* [JOB] Translation#translate failed with NoMethodError: undefined method `description' for #<ShopifyAPI::Product:0x102ac1c48> - 1 failed attempts
+undefined method `description' for #<ShopifyAPI::Product:0x102ac1c48>
+* [JOB] aquiring lock on Translation#translate
+  [4;36;1mDelayed::Job Update (2.6ms)[0m   [0;1mUPDATE "delayed_jobs" SET locked_at = '2010-01-09 12:57:00' WHERE (id = 2 and locked_by = 'host:Jessebook-2.local pid:81343') [0m
+  [4;35;1mTranslation Load (0.4ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;36;1mShop Load (0.3ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."id" = 1) [0m
+  [4;35;1mDelayed::Job Update (0.5ms)[0m   [0mUPDATE "delayed_jobs" SET "updated_at" = '2010-01-09 12:57:01', "last_error" = 'undefined method `description'' for #<ShopifyAPI::Product:0x1033067f0>
+/Library/Ruby/Gems/1.8/gems/activeresource-2.3.5/lib/active_resource/base.rb:1153:in `method_missing''
+/Users/jesse/workspace/rails/no-hablo/app/models/translation.rb:10:in `translate''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/performable_method.rb:23:in `send''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/performable_method.rb:23:in `perform''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:220:in `invoke_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:92:in `run_with_lock''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:91:in `run_with_lock''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:158:in `reserve_and_run_one_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:157:in `each''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:157:in `reserve_and_run_one_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:204:in `work_off''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:203:in `times''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:203:in `work_off''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:28:in `start''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:27:in `start''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:24:in `loop''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:24:in `start''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/tasks/tasks.rb:13
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `call''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `execute''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `each''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `execute''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:597:in `invoke_with_call_chain''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:590:in `invoke_with_call_chain''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:583:in `invoke''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2051:in `invoke_task''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `each''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2023:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2001:in `run''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:1998:in `run''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/bin/rake:31
+/usr/bin/rake:19:in `load''
+/usr/bin/rake:19', "locked_by" = NULL, "attempts" = 2, "run_at" = '2010-01-09 12:57:07', "locked_at" = NULL WHERE "id" = 2[0m
+* [JOB] Translation#translate failed with NoMethodError: undefined method `description' for #<ShopifyAPI::Product:0x1033067f0> - 2 failed attempts
+undefined method `description' for #<ShopifyAPI::Product:0x1033067f0>
+2 jobs processed at 0.5112 j/s, 2 failed ...
+* [JOB] aquiring lock on Translation#translate
+  [4;36;1mDelayed::Job Update (2.9ms)[0m   [0;1mUPDATE "delayed_jobs" SET locked_at = '2010-01-09 12:57:11', locked_by = 'host:Jessebook-2.local pid:81343' WHERE (id = 2 and (locked_at is null or locked_at < '2010-01-09 08:57:11')) [0m
+  [4;35;1mTranslation Load (0.4ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;36;1mShop Load (0.3ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."id" = 1) [0m
+  [4;35;1mDelayed::Job Update (0.4ms)[0m   [0mUPDATE "delayed_jobs" SET "updated_at" = '2010-01-09 12:57:13', "last_error" = 'undefined method `description'' for #<ShopifyAPI::Product:0x102b3d500>
+/Library/Ruby/Gems/1.8/gems/activeresource-2.3.5/lib/active_resource/base.rb:1153:in `method_missing''
+/Users/jesse/workspace/rails/no-hablo/app/models/translation.rb:10:in `translate''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/performable_method.rb:23:in `send''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/performable_method.rb:23:in `perform''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:220:in `invoke_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:92:in `run_with_lock''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:91:in `run_with_lock''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:158:in `reserve_and_run_one_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:157:in `each''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:157:in `reserve_and_run_one_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:204:in `work_off''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:203:in `times''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:203:in `work_off''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:28:in `start''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:27:in `start''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:24:in `loop''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:24:in `start''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/tasks/tasks.rb:13
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `call''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `execute''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `each''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `execute''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:597:in `invoke_with_call_chain''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:590:in `invoke_with_call_chain''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:583:in `invoke''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2051:in `invoke_task''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `each''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2023:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2001:in `run''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:1998:in `run''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/bin/rake:31
+/usr/bin/rake:19:in `load''
+/usr/bin/rake:19', "attempts" = 3, "run_at" = '2010-01-09 12:57:34' WHERE "id" = 2[0m
+* [JOB] Translation#translate failed with NoMethodError: undefined method `description' for #<ShopifyAPI::Product:0x102b3d500> - 3 failed attempts
+undefined method `description' for #<ShopifyAPI::Product:0x102b3d500>
+* [JOB] aquiring lock on Translation#translate
+  [4;36;1mDelayed::Job Update (2.2ms)[0m   [0;1mUPDATE "delayed_jobs" SET locked_at = '2010-01-09 12:57:13' WHERE (id = 2 and locked_by = 'host:Jessebook-2.local pid:81343') [0m
+  [4;35;1mTranslation Load (0.3ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;36;1mShop Load (0.2ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."id" = 1) [0m
+  [4;35;1mDelayed::Job Update (0.5ms)[0m   [0mUPDATE "delayed_jobs" SET "updated_at" = '2010-01-09 12:57:15', "last_error" = 'undefined method `description'' for #<ShopifyAPI::Product:0x102a917a0>
+/Library/Ruby/Gems/1.8/gems/activeresource-2.3.5/lib/active_resource/base.rb:1153:in `method_missing''
+/Users/jesse/workspace/rails/no-hablo/app/models/translation.rb:10:in `translate''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/performable_method.rb:23:in `send''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/performable_method.rb:23:in `perform''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:220:in `invoke_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:92:in `run_with_lock''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:91:in `run_with_lock''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:158:in `reserve_and_run_one_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:157:in `each''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:157:in `reserve_and_run_one_job''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:204:in `work_off''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:203:in `times''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/job.rb:203:in `work_off''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:28:in `start''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:27:in `start''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:24:in `loop''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/lib/delayed/worker.rb:24:in `start''
+/Users/jesse/workspace/rails/no-hablo/vendor/plugins/delayed_job/tasks/tasks.rb:13
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `call''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:636:in `execute''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `each''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:631:in `execute''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:597:in `invoke_with_call_chain''
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/monitor.rb:242:in `synchronize''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:590:in `invoke_with_call_chain''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:583:in `invoke''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2051:in `invoke_task''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `each''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2029:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2023:in `top_level''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2001:in `run''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:2068:in `standard_exception_handling''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/lib/rake.rb:1998:in `run''
+/Library/Ruby/Gems/1.8/gems/rake-0.8.7/bin/rake:31
+/usr/bin/rake:19:in `load''
+/usr/bin/rake:19', "locked_by" = NULL, "attempts" = 4, "run_at" = '2010-01-09 12:58:41', "locked_at" = NULL WHERE "id" = 2[0m
+* [JOB] Translation#translate failed with NoMethodError: undefined method `description' for #<ShopifyAPI::Product:0x102a917a0> - 4 failed attempts
+undefined method `description' for #<ShopifyAPI::Product:0x102a917a0>
+2 jobs processed at 0.5157 j/s, 2 failed ...
+Exiting...
+Exiting...
+  [4;36;1mDelayed::Job Update (1.2ms)[0m   [0;1mUPDATE "delayed_jobs" SET locked_by = null, locked_at = null WHERE (locked_by = 'host:Jessebook-2.local pid:81343') [0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mDelayed::Job Load (0.5ms)[0m   [0;1mSELECT * FROM "delayed_jobs" ORDER BY delayed_jobs.id DESC LIMIT 1[0m
+  [4;35;1mDelayed::Job Load (0.5ms)[0m   [0mSELECT * FROM "delayed_jobs" ORDER BY delayed_jobs.id DESC LIMIT 1[0m
+  [4;36;1mDelayed::Job Load (0.5ms)[0m   [0;1mSELECT * FROM "delayed_jobs" ORDER BY delayed_jobs.id DESC LIMIT 1[0m
+  [4;35;1mTranslation Load (0.2ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;36;1mShop Load (0.3ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."id" = 1) [0m
+  [4;35;1mDelayed::Job Load (0.6ms)[0m   [0mSELECT * FROM "delayed_jobs" ORDER BY delayed_jobs.id DESC LIMIT 1[0m
+  [4;36;1mTranslation Load (0.3ms)[0m   [0;1mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;35;1mShop Load (0.3ms)[0m   [0mSELECT * FROM "shops" WHERE ("shops"."id" = 1) [0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mDelayed::Job Load (0.5ms)[0m   [0;1mSELECT * FROM "delayed_jobs" ORDER BY delayed_jobs.id DESC LIMIT 1[0m
+  [4;35;1mTranslation Load (0.2ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;36;1mShop Load (0.3ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."id" = 1) [0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mDelayed::Job Load (0.5ms)[0m   [0;1mSELECT * FROM "delayed_jobs" ORDER BY delayed_jobs.id DESC LIMIT 1[0m
+  [4;35;1mTranslation Load (0.2ms)[0m   [0mSELECT * FROM "translations" WHERE ("translations"."id" = 3) [0m
+  [4;36;1mShop Load (0.3ms)[0m   [0;1mSELECT * FROM "shops" WHERE ("shops"."id" = 1) [0m
+[Shopify App] Loading API credentials from config/shopify.yml
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (240.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateShops (20100107182002)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "shops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "site" varchar(255), "processing" boolean, "subdomain" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100107182002')[0m
+Migrating to CreateDelayedJobs (20100107183507)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" varchar(255), "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100107183507')[0m
+Migrating to CreateTranslations (20100107185021)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "translations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "shop_id" integer, "to_lang" varchar(255), "paid" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100107185021')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("shops")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("translations")[0m
+[Shopify App] Loading API credentials from config/shopify.yml

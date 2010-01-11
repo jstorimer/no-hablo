@@ -1,1 +1,3 @@
-require 'google_translate'
+config.after_initialize do
+  require 'google_translate'
+end

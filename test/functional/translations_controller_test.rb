@@ -23,12 +23,13 @@ class TranslationsControllerTest < ActionController::TestCase
   end
 
   test "on GET to :create after accepting charge should create a DJ" do
+    @controller.stubs(:requires_payment?).returns(false)
+    
     assert_difference "Delayed::Job.count" do
       get :create, :translation => {:to_lang => 'fr'}
     end
 
     assert assigns(:translation).shop.processing?
-    assert assigns(:translation).paid?
   end
 
   test "on POST to :create while currently processing should refuse" do

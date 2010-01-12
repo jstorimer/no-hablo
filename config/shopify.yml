@@ -19,12 +19,12 @@
 #
 #   heroku config:add SHOPIFY_API_KEY=KEY SHOPIFY_API_SECRET=SECRET
 development:
-  api_key:
-  secret: 
+  api_key: KEY
+  secret: SECRET
 
 test:
-  api_key: 
-  secret: 
+  api_key: KEY
+  secret: SECRET
     
 production:
   api_key: 

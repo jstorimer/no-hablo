@@ -24,5 +24,7 @@ class Translation < ActiveRecord::Base
     
     shop.update_attributes(:processing => false)
     TranslationMailer.deliver_notification(ShopifyAPI::Shop.current.email, self)
+
+    ShopifyAPI::Base.site = nil
   end
 end
